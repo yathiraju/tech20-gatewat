@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: gateway
+
+server:
+  port: 8080
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    customer-service:
+      path: /api/customer/**
+      serviceId: customer-service
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
+
