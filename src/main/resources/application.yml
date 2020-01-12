@@ -9,8 +9,13 @@ zuul:
   ignoredServices: '*'
   routes:
     customer-service:
-      path: /api/customer/**
+      path: /customer/**
       serviceId: customer-service
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
+    order-service:
+      path: /order/**
+      serviceId: order-service
       stripPrefix: false
       sensitiveHeaders: Cookie,Set-Cookie
 
